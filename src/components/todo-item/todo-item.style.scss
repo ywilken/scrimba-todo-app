@@ -6,7 +6,7 @@
     width: 70%;
     border-bottom: 1px solid #cecece;
     font-family: Roboto, sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 15px;
     color: #333333;
 
@@ -18,5 +18,10 @@
 
     & input:focus {
         outline: 0;
+    }
+
+    & .completed {
+        opacity: 0.4;
+        text-decoration: line-through;
     }
 }
