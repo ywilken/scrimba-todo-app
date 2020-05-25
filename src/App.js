@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import todosData from './todosData';
+import TodoItem from './components/todo-item/todo-item.component';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            todos: todosData
+        }
+    }
+    
+    render() {
+        const todoItem = this.state.todos.map( todo => {
+            return <TodoItem key={todo.id} todo={todo}/>
+        })
+
+        return (
+            <div className="todo-list">
+                {todoItem}
+            </div>
+        )
+    }
 }
 
 export default App;
